@@ -1,0 +1,240 @@
+:root {
+  --accent: #d97a2b;
+  --accent-hover: #f08f3c;
+  --text-color: rgba(34, 24, 20, 0.9);
+  --bg-gradient-start: #f4ede4;
+  --bg-gradient-end: #d5e2f5;
+  --glass-bg: rgba(255, 255, 255, 0.12);
+  --glass-border: rgba(255, 255, 255, 0.25);
+  --max-width: 1100px;
+  --shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.65);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.navbar {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  font-size: 1.1rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  gap: 2.5rem;
+}
+
+.hero {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.hero p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.tagline {
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: rgba(34, 24, 20, 0.65);
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.button-group {
+  margin-top: 1.5rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.8rem;
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.button.primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.button.primary:hover,
+.button.primary:focus {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.button.secondary {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--text-color);
+  border: 1px solid var(--glass-border);
+}
+
+.button.secondary:hover,
+.button.secondary:focus {
+  background: rgba(255, 255, 255, 0.32);
+  transform: translateY(-2px);
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  border-radius: 24px;
+  border: 1px solid var(--glass-border);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.section-title {
+  margin: 0 0 1.5rem;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  letter-spacing: 0.03em;
+}
+
+.services-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.services-grid .glass-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+}
+
+.services-grid .glass-card p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.hours-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.highlight-box {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+footer {
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(34, 24, 20, 0.75);
+}
+
+footer a {
+  color: inherit;
+  font-weight: 600;
+}
+
+@media (min-width: 600px) {
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  .services-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .hero {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+  }
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass-card,
+  header,
+  .highlight-box {
+    background: rgba(255, 255, 255, 0.9);
+  }
+}
